@@ -1,6 +1,9 @@
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
+import { json } from 'body-parser';
 
 function App() {
   // Set state for note, setting notes.
@@ -11,6 +14,7 @@ function App() {
   // Call useEffect hook 
   // Add new notes to local storage as json.
 
+
   // Create function that creates new note object.
   // id, title, body, date modified
   // update state with new note
@@ -18,10 +22,12 @@ function App() {
   // Create function for deleting note
   // filter out notes that match the id of the note that is to be deleted
 
+
   // Create function for updating note
 
   // Create a function to set an active note to be modified
   // .find() the note that matches the id of the note to be activated.
+
 
 
 

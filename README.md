@@ -1,21 +1,23 @@
-  <!-- // Set state for note, setting notes. -->
+<!-- ------------------------------------------------------------------------ -->
 
-  // Check for existing notes in local storage.  If notes in storage, parse them into json , if none, create empty array for new notes. 
+Mark Up
 
-  // Set state for Active note, setting active note. Set default to false.
+1.  Input Field -- Within Sample Note Card. Create New Note on Save BTN Click.
+    a. Input.value = new Note
+    b. Add Date to new Note
+    c. Delete Btn to new Note
 
-  // Call useEffect hook 
-  // Add new notes to local storage as json.
+  <!-- ------------------------------------------------------------------------ -->
 
-  // Create function that creates new note object.
-  // id, title, body, date modified
-  // update state with new note
+// Create function that creates new note object.
+// id, title, body, date modified
+// update state with new note
 
-  // Create function for deleting note
-  // filter out notes that match the id of the note that is to be deleted
+  <!-- ------------------------------------------------------------------------ -->
 
-  // Create function for updating note
+// Create function for deleting note
+// filter out notes that match the id of the note that is to be delete
 
-  // Create a function to set an active note to be modified
-  // .find() the note that matches the id of the note to be activated.
+  <!-- ------------------------------------------------------------------------ -->
 
+  <!-- ------------------------------------------------------------------------ -->

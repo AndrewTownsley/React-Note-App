@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 #root {
-  font-family: "Open Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .App {
@@ -11,21 +11,12 @@
   min-width: 100vw;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
+.note-card {
+  border: 2px solid rgb(218, 218, 218);
+  border-radius: 8px;
+  height: 200px;
 }
 
-.main-note-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar header {
-  display: flex;
+.note-input textarea {
+  border: none;
 }

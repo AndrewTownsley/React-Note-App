@@ -15,6 +15,7 @@ const createNote = (text) => {
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
+  console.log(notesArray);
 }
 
 // Write a function that sets the value of the textarea as the noteText, 
@@ -22,16 +23,14 @@ const createNote = (text) => {
 const handleTextChange = (event) => {
     setNoteText(event.target.value)
     console.log(event.target.value);
-    createNote(noteText);
-}
-
-
-// Write a function that calls the createNote() function, with noteText passed in as a parameter.
-// Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
-const saveNote = () => {
-  if(noteText.trim() > 0) {
-    setNoteText('');
   }
+  
+  
+  // Write a function that calls the createNote() function, with noteText passed in as a parameter.
+  // Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
+  const saveNote = () => {
+    createNote(noteText);
+      setNoteText('');
 }
 
 
@@ -55,7 +54,7 @@ const saveNote = () => {
           <ul>
             {notesArray.map((note) => {
               return  <div key={nanoid()}>
-                {note.text}
+                <p>{note.text}</p>
               </div>
             })}
           </ul>

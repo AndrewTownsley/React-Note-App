@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MdDeleteForever } from 'react-icons/md'
 import { nanoid } from "nanoid";
 import "./App.css";
 // import NoteInput from "./components/NoteInput";
@@ -38,26 +39,33 @@ const handleTextChange = (event) => {
   return (
     <div className="App">
       {/* Note Input  */}
-        <div className="note-input note-card">
+        <div className="note-input">
+          <div className="note-input-container">
+          <h3>Create Note</h3>
             <textarea 
               onChange={handleTextChange}
               value={noteText} 
-              rows="8" cols="10" 
+              rows="6" cols="20" 
               placeholder="Enter note here..." 
               name="note" 
               id="note-input" >
               </textarea>
-            <small>chars remaining</small>
-            <button onClick={saveNote} className="save btn">Save</button>
+            <div className="note-input-footer">
+              <small>chars remaining</small>
+              <button onClick={saveNote} className="save-btn">Save</button>
+            </div>
+          </div>
         </div>  
         <section className="notes-list">
-          <ul>
             {notesArray.map((note) => {
-              return  <div key={nanoid()}>
+              return  <article className="note" key={nanoid()}>
                 <p>{note.text}</p>
-              </div>
+                <div className="note-footer">
+                  <p>8/8/2021</p>
+                  <MdDeleteForever/>
+                </div>
+              </article>
             })}
-          </ul>
         </section>  
     </div>
   );

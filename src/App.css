@@ -1,22 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
 }
 
 .App {
-  min-width: 100%;
   display: flex;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
-.note-card {
+.note-input {
+  height: 230px;
+  width: 250px;
+  border-radius: 8px;
+  margin: 1.5rem;
+  padding: 1rem;
+  background-color: #a0fffa;
   border: 2px solid rgb(218, 218, 218);
   border-radius: 8px;
-  height: 200px;
 }
 
 .note-input textarea {
+  font-size: 1rem;
+  background-color: #a0fffa;
   border: none;
+}
+
+.note-input textarea:focus {
+  outline: 2px solid #999;
+}
+
+.note-input h3 {
+  border-bottom: 2px solid #999;
+  margin-bottom: 1rem;
+}
+
+.note-input-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn {
+  border: none;
+  background-color: #444;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.save-btn:hover {
+  background-color: rgb(44, 44, 66);
+}
+
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 250px;
+  max-width: 250px;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem;
+  background-color: #fef68a;
+}
+
+.note-footer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
 }

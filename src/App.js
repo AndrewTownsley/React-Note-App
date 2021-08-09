@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { MdDeleteForever } from 'react-icons/md'
 import { nanoid } from "nanoid";
 import "./App.css";
-// import NoteInput from "./components/NoteInput";
+import NoteList from './components/NoteList';
+
 
 function App() {
   const [notesArray, setNotesArray] = useState([]);
   const [noteText, setNoteText] = useState('');
+  const [searchText, setSearchText] = useState('');
 
 // Write a function that creates a new Note Object, and adds the new Note Object to the notesArray.  Note should have an ID and text.  Then add the new note to the notesArray.  Then set the notesArray value to the newNotes array.
 const createNote = () => {
+  const date = new Date();
   const newNote = {
     id: nanoid(),
     text: noteText,
+    date: date.toLocaleDateString()
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
@@ -42,7 +45,13 @@ const deleteNote = (id) => {
 
   return (
     <div className="App">
-      {/* Note Input  */}
+      <header className="search-header">
+        <form onChange={(event) => setSearchText(event.target.value)} action="submit">
+          <label htmlFor="note-search">
+            <input type="text" name="search" id="search"/>
+          </label>
+        </form>
+      </header>
         <div className="note-input">
           <div className="note-input-container">
           <h3>Create Note</h3>
@@ -60,17 +69,9 @@ const deleteNote = (id) => {
             </div>
           </div>
         </div>  
-        <section className="notes-list">
-            {notesArray.map((note) => {
-              return  <article className="note" key={nanoid()} id={note.id}>
-                <p>{note.text}</p>
-                <div className="note-footer">
-                  <p>8/8/2021</p>
-                  <MdDeleteForever className="delete-btn" onClick={() => deleteNote(note.id)}/>
-                </div>
-              </article>
-            })}
-        </section>  
+        <NoteList 
+          notesArray={notesArray}
+          deleteNote={deleteNote} />  
     </div>
   );
 }

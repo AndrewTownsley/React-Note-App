@@ -60,9 +60,9 @@
 }
 
 .note {
-  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 200px;
   min-width: 200px;
   max-height: 250px;
@@ -74,12 +74,13 @@
 }
 
 .note-footer {
-  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  bottom: 10px;
+}
+
+.delete-btn {
+  cursor: pointer;
 }
 
 .notes-list {

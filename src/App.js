@@ -9,21 +9,19 @@ function App() {
   const [noteText, setNoteText] = useState('');
 
 // Write a function that creates a new Note Object, and adds the new Note Object to the notesArray.  Note should have an ID and text.  Then add the new note to the notesArray.  Then set the notesArray value to the newNotes array.
-const createNote = (text) => {
+const createNote = () => {
   const newNote = {
     id: nanoid(),
     text: noteText,
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
-  console.log(notesArray);
 }
 
 // Write a function that sets the value of the textarea as the noteText, 
 // if the event.target.value.length >= 0.
 const handleTextChange = (event) => {
     setNoteText(event.target.value)
-    console.log(event.target.value);
   }
   
   
@@ -32,6 +30,12 @@ const handleTextChange = (event) => {
   const saveNote = () => {
     createNote(noteText);
       setNoteText('');
+}
+
+const deleteNote = (id) => {
+  const newNotes = notesArray.filter((note) => note.id !== id)
+  setNotesArray(newNotes);
+  console.log("clicked delete");
 }
 
 
@@ -58,11 +62,11 @@ const handleTextChange = (event) => {
         </div>  
         <section className="notes-list">
             {notesArray.map((note) => {
-              return  <article className="note" key={nanoid()}>
+              return  <article className="note" key={nanoid()} id={note.id}>
                 <p>{note.text}</p>
                 <div className="note-footer">
                   <p>8/8/2021</p>
-                  <MdDeleteForever/>
+                  <MdDeleteForever className="delete-btn" onClick={() => deleteNote(note.id)}/>
                 </div>
               </article>
             })}

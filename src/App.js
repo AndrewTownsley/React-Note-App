@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { nanoid } from "nanoid";
 import "./App.css";
 import NoteList from './components/NoteList';
-import NoteInput from './components/NoteInput';
-import Search from './components/Search';
+import SideBar from './components/SideBar';
 
 
 function App() {
@@ -44,15 +43,14 @@ const deleteNote = (id) => {
   console.log("clicked delete");
 }
 
-
-
   return (
     <div className="App">
-        <Search setSearchText={setSearchText}/>
-        <NoteInput 
+        <SideBar 
+          setSearchText={setSearchText}
           handleTextChange={handleTextChange}
           noteText={noteText}
-          saveNote={saveNote}/>
+          saveNote={saveNote}
+        />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
           deleteNote={deleteNote} />  

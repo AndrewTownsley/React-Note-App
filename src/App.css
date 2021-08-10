@@ -11,23 +11,47 @@
 }
 
 .App {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.sidebar {
+  border-right: 1px solid black;
+}
+
+.search-header {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-header input {
+  /* width: 280px; */
+  /* width: 80%; */
+  padding: 0.5rem 1.5rem;
+  margin: 1rem;
+  border-radius: 20px;
+  border: none;
+  border: 3px solid rgb(197, 197, 197);
+}
+
+.search-header input:focus {
+  border: 3px solid #374785;
+  outline: none;
 }
 
 .note-input {
   height: 230px;
-  width: 250px;
-  border-radius: 8px;
-  margin: 1.5rem;
+  max-width: 100%;
+  margin: 0 0 1.5rem 0;
   padding: 1rem;
-  background-color: #a0fffa;
-  border: 2px solid rgb(218, 218, 218);
-  border-radius: 8px;
+  background-color: #a8d0e6;
 }
 
 .note-input textarea {
   font-size: 1rem;
-  background-color: #a0fffa;
+  background-color: #a8d0e6;
   border: none;
 }
 

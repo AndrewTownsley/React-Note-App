@@ -15,7 +15,7 @@ const NoteInput = ({ handleTextChange, noteText, saveNote}) => {
             </textarea>
           <div className="note-input-footer">
             <small>chars remaining</small>
-            <button onClick={saveNote} className="save-btn">Save</button>
+            <button type="submit" onClick={saveNote} className="save-btn">Save</button>
           </div>
         </div>
       </div>

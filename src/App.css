@@ -17,7 +17,9 @@
 }
 
 .sidebar {
+  background-color: #9e8fe7;
   border-right: 1px solid black;
+  height: 100vh;
 }
 
 .search-header {
@@ -46,21 +48,20 @@
   max-width: 100%;
   margin: 0 0 1.5rem 0;
   padding: 1rem;
-  background-color: #a8d0e6;
 }
 
 .note-input textarea {
   font-size: 1rem;
-  background-color: #a8d0e6;
+  background-color: #9e8fe7;
   border: none;
 }
 
 .note-input textarea:focus {
-  outline: 2px solid #999;
+  outline: 2px solid #444;
 }
 
 .note-input h3 {
-  border-bottom: 2px solid #999;
+  border-bottom: 2px solid #444;
   margin-bottom: 1rem;
 }
 

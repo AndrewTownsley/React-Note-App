@@ -43,6 +43,7 @@ const deleteNote = (id) => {
   console.log("clicked delete");
 }
 
+
   return (
     <div className="App">
         <SideBar 

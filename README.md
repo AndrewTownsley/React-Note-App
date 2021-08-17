@@ -1,6 +1,6 @@
-<!-- ------------------------------------------------------------------------ -->
+**_ // ICONS / FOCUS / ACCESSIBILITY _**
 
-Mark Up
+<!-- ------------------------------------------------------------------------ -->
 
 1.  Input Field -- Within Sample Note Card. Create New Note on Save BTN Click.
     a. Input.value = new Note
@@ -21,6 +21,17 @@ Mark Up
   <!-- ------------------------------------------------------------------------ -->
 
 // Search Notes by keyword
+
+  <!-- ------------------------------------------------------------------------ -->
+
+**_ // ICONS / FOCUS / ACCESSIBILITY / TRANSITIONS ? AIRBNB _**
+**_ // ICONS / FOCUS / ACCESSIBILITY / TRANSITIONS ? AIRBNB _**
+**_ // ICONS / FOCUS / ACCESSIBILITY / TRANSITIONS ? AIRBNB _**
+**_ // ICONS / FOCUS / ACCESSIBILITY / TRANSITIONS ? AIRBNB _**
+
+  <!-- ------------------------------------------------------------------------ -->
+
+// Do not save note if the text is blank.
 
   <!-- ------------------------------------------------------------------------ -->
 
@@ -49,3 +60,7 @@ Mark Up
   <!-- ------------------------------------------------------------------------ -->
 
 // Database
+
+  <!-- ------------------------------------------------------------------------ -->
+
+**_ // ICONS / FOCUS / ACCESSIBILITY _**

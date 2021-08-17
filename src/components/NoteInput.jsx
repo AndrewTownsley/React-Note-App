@@ -11,11 +11,12 @@ const NoteInput = ({ handleTextChange, noteText, saveNote}) => {
             rows="6" cols="20" 
             placeholder="Enter note here..." 
             name="note" 
-            id="note-input" >
+            id="note-input"
+            autoFocus={true} >
             </textarea>
           <div className="note-input-footer">
             <small>chars remaining</small>
-            <button type="submit" onClick={saveNote} className="save-btn">Save</button>
+            <button type="submit" onClick={saveNote} className="save-btn">Save Note</button>
           </div>
         </div>
       </div>

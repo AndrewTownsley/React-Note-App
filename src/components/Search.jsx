@@ -1,13 +1,16 @@
 
-const Search = ({ setSearchText }) => {
+const Search = ({ handleSearchNote, setSearchText }) => {
 
     return (
         <header className="search-header">
-            <form onChange={(event) => setSearchText(event.target.value)} action="submit">
                 <label htmlFor="note-search">
-                    <input type="text" name="search" id="search" placeholder="Search Notes..."/>
+                    <input 
+                        onChange={(event) => handleSearchNote(event.target.value)} type="text" 
+                        name="search" 
+                        id="search" 
+                        placeholder="Search Notes..."
+                        />
                 </label>
-            </form>
         </header>
     )
 }

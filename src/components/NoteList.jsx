@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { nanoid } from "nanoid";
 import Note from "./Note";
 
@@ -10,7 +9,9 @@ const NoteList = ({ notesArray, deleteNote}) => {
             {notesArray.map((note) => {
               return  <Note 
                         key={nanoid()}
+                        id={note.id}
                         note={note}
+                        text={note.text}
                         deleteNote={deleteNote}
                       />
             })}

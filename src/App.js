@@ -46,7 +46,7 @@ const deleteNote = (id) => {
   return (
     <div className="App">
         <SideBar 
-          setSearchText={setSearchText}
+          handleSearchNote={setSearchText}
           handleTextChange={handleTextChange}
           noteText={noteText}
           saveNote={saveNote}

@@ -1,5 +1,4 @@
 import NoteInput from "./NoteInput";
-import Search from "./Search";
 
 const SideBar = ({ 
     setSearchText, 

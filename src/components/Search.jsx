@@ -5,7 +5,7 @@ const Search = ({ handleSearchNote, setSearchText }) => {
         <header className="search-header">
                 <label htmlFor="note-search">
                     <input 
-                        onChange={(event) => setSearchText(event.target.value)} 
+                        onChange={(event) => handleSearchNote(event.target.value)} 
                         type="text" 
                         name="search" 
                         id="search" 

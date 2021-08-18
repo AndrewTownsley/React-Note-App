@@ -6,9 +6,14 @@ import SideBar from './components/SideBar';
 
 
 function App() {
-  const [notesArray, setNotesArray] = useState([]);
   const [noteText, setNoteText] = useState('');
   const [searchText, setSearchText] = useState('');
+  const [notesArray, setNotesArray] = useState(() => {
+
+    const savedNotes = localStorage.getItem("notes-app-data");
+    const initialValue = JSON.parse(savedNotes);
+    return initialValue || "";
+  });
 
 // Write a function that creates a new Note Object, and adds the new Note Object to the notesArray.  Note should have an ID and text.  Then add the new note to the notesArray.  Then set the notesArray value to the newNotes array.
 const createNote = () => {
@@ -42,6 +47,10 @@ const deleteNote = (id) => {
   setNotesArray(newNotes);
   console.log("clicked delete");
 }
+
+useEffect(() => {
+  localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
+}, [notesArray])
 
 
   return (

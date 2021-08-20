@@ -60,6 +60,7 @@ useEffect(() => {
           handleTextChange={handleTextChange}
           noteText={noteText}
           saveNote={saveNote}
+          notesArray={notesArray}
         />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}

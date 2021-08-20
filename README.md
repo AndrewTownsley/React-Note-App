@@ -15,7 +15,7 @@
 
   <!-- ------------------------------------------------------------------------ -->
 
-// Create function for deleting note
+<!-- // Create function for deleting note -->
 
 <!-- // filter out notes that match the id of the note that is to be deleted -->
 

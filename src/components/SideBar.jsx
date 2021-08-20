@@ -1,11 +1,14 @@
 import NoteInput from "./NoteInput";
+import NoteHistory from "./NoteHistory";
 
 const SideBar = ({ 
     setSearchText, 
     handleTextChange, 
     noteText, 
     saveNote, 
-    handleSearchNote }) => {
+    handleSearchNote,
+    notesArray 
+    }) => {
 
     return (
         <div className="sidebar">
@@ -20,13 +23,13 @@ const SideBar = ({
                         />
                 </label>
         </header>
-            {/* <Search 
-                handleSearchNote={setSearchText}
-            /> */}
             <NoteInput 
                 handleTextChange={handleTextChange}
                 noteText={noteText}
                 saveNote={saveNote}
+            />
+            <NoteHistory
+                notesArray={notesArray}
             />
         </div>
     )

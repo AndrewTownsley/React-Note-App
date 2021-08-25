@@ -34,7 +34,7 @@
 
 **_ Save notes on sidebar. when sidebar note is clicked, open the note and editor on the main section. _**
 
-// Do not save note if the text is blank.
+<!-- // Do not save note if the text is blank. -->
 
   <!-- ------------------------------------------------------------------------ -->
 

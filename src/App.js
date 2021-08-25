@@ -40,7 +40,7 @@ const handleTextChange = (event) => {
   
   // Write a function that calls the createNote() function, with noteText passed in as a parameter.
   // Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
-  const saveNote = () => {
+const saveNote = () => {
     if(noteText.trim().length > 0)
     createNote(noteText);
       setNoteText('');
@@ -49,7 +49,6 @@ const handleTextChange = (event) => {
 const deleteNote = (id) => {
   const newNotes = notesArray.filter((note) => note.id !== id)
   setNotesArray(newNotes);
-  console.log("clicked delete");
 }
 
 useEffect(() => {
@@ -65,11 +64,11 @@ useEffect(() => {
           noteText={noteText}
           saveNote={saveNote}
           notesArray={notesArray}
-          characterLimit={characterLimit}
         />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
-          deleteNote={deleteNote} />  
+          deleteNote={deleteNote} 
+        />  
     </div>
   );
 }

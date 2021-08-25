@@ -19,10 +19,14 @@
 /* ------------------------------ Sidebar */
 
 .sidebar {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; */
   background-color: #201944;
   border-right: 1px solid black;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .search-header {
@@ -106,6 +110,13 @@
 
 /* ----------------------------------- Note Item  */
 
+.notes-list {
+  /* position: relative; */
+  /* margin-left: 300px; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .note {
   display: flex;
   flex-direction: column;
@@ -137,9 +148,4 @@
 
 .delete-btn {
   cursor: pointer;
-}
-
-.notes-list {
-  display: flex;
-  flex-wrap: wrap;
 }

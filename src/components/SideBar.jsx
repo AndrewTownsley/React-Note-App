@@ -2,13 +2,11 @@ import NoteInput from "./NoteInput";
 import NoteHistory from "./NoteHistory";
 
 const SideBar = ({ 
-    setSearchText, 
     handleTextChange, 
     noteText, 
     saveNote, 
     handleSearchNote,
     notesArray,
-    characterLimit
     }) => {
 
     return (
@@ -28,7 +26,6 @@ const SideBar = ({
                 handleTextChange={handleTextChange}
                 noteText={noteText}
                 saveNote={saveNote}
-                characterLimit={characterLimit}
             />
             <NoteHistory
                 notesArray={notesArray}

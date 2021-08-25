@@ -7,6 +7,7 @@ const SideBar = ({
     saveNote, 
     handleSearchNote,
     notesArray,
+    deleteNote
     }) => {
 
     return (
@@ -29,6 +30,7 @@ const SideBar = ({
             />
             <NoteHistory
                 notesArray={notesArray}
+                deleteNote={deleteNote}
             />
         </div>
     )

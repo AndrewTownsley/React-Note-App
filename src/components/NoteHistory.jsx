@@ -1,4 +1,6 @@
 import { nanoid } from "nanoid";
+import { MdDeleteForever } from 'react-icons/md'
+
 
 
 const NoteHistory = ({ notesArray, deleteNote}) => {
@@ -10,10 +12,10 @@ const NoteHistory = ({ notesArray, deleteNote}) => {
                     return <li className="note-history-item"
                                 key={nanoid()}
                                 id={note.id}
-                                text={note.text}
-                                deleteNote={deleteNote}>
+                                text={note.text}>
                                     <p>{note.text}</p>
                                     <p>{note.date}</p>
+                                    <MdDeleteForever className="delete-btn" onClick={() => deleteNote(note.id)}/>
                             </li>
                 })}
             </ul>

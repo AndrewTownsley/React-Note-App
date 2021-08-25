@@ -15,7 +15,7 @@ const NoteInput = ({ handleTextChange, noteText, saveNote}) => {
             autoFocus={true} >
             </textarea>
           <div className="note-input-footer">
-            <small>chars remaining</small>
+            {/* <small>chars remaining</small> */}
             <button type="submit" onClick={saveNote} className="save-btn">Save Note</button>
           </div>
         </div>

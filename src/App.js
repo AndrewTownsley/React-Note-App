@@ -7,6 +7,7 @@ import SideBar from './components/SideBar';
 
 function App() {
   const [noteText, setNoteText] = useState('');
+  const [noteTitle, setNoteTitle] = useState('');
   const [searchText, setSearchText] = useState('');
   const [notesArray, setNotesArray] = useState(() => {
 
@@ -21,12 +22,17 @@ const createNote = () => {
   const date = new Date();
   const newNote = {
     id: nanoid(),
+    title: noteTitle,
     text: noteText,
     date: date.toLocaleDateString()
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
-  console.log(notesArray);
+}
+
+const handleTitleChange = (event) => {
+    setNoteTitle(event.target.value);
+    console.log("Title Function");
 }
 
 // Write a function that sets the value of the textarea as the noteText, 
@@ -42,8 +48,9 @@ const handleTextChange = (event) => {
   // Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
 const saveNote = () => {
     if(noteText.trim().length > 0)
-    createNote(noteText);
+    createNote(noteText, noteTitle);
       setNoteText('');
+      setNoteTitle('');
 }
 
 const deleteNote = (id) => {
@@ -55,12 +62,15 @@ useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
 }, [notesArray])
 
-
+console.log(noteText);
+console.log(noteTitle);
   return (
     <div className="App">
         <SideBar 
           handleSearchNote={setSearchText}
           handleTextChange={handleTextChange}
+          handleTitleChange={handleTitleChange}
+          noteTitle={noteTitle}
           noteText={noteText}
           saveNote={saveNote}
           notesArray={notesArray}

@@ -3,29 +3,21 @@ import NoteHistory from "./NoteHistory";
 
 const SideBar = ({ 
     handleTextChange, 
+    handleTitleChange,
     noteText, 
+    noteTitle,
     saveNote, 
-    handleSearchNote,
     notesArray,
     deleteNote
     }) => {
 
     return (
         <div className="sidebar">
-              <header className="search-header">
-                <label htmlFor="note-search">
-                    <input 
-                        onChange={(event) => handleSearchNote(event.target.value)} 
-                        type="text" 
-                        name="search" 
-                        id="search" 
-                        placeholder="Search Notes..."
-                        />
-                </label>
-        </header>
             <NoteInput 
                 handleTextChange={handleTextChange}
+                handleTitleChange={handleTitleChange}
                 noteText={noteText}
+                noteTitle={noteTitle}
                 saveNote={saveNote}
             />
             <NoteHistory

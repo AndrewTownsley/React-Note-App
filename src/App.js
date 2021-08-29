@@ -67,7 +67,6 @@ console.log(noteTitle);
   return (
     <div className="App">
         <SideBar 
-          handleSearchNote={setSearchText}
           handleTextChange={handleTextChange}
           handleTitleChange={handleTitleChange}
           noteTitle={noteTitle}
@@ -75,10 +74,11 @@ console.log(noteTitle);
           saveNote={saveNote}
           notesArray={notesArray}
           deleteNote={deleteNote}
-        />
+          />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
           deleteNote={deleteNote} 
+          handleSearchNote={setSearchText}
         />  
     </div>
   );

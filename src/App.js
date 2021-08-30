@@ -8,6 +8,8 @@ import SideBar from './components/SideBar';
 function App() {
   const [noteText, setNoteText] = useState('');
   const [noteTitle, setNoteTitle] = useState('');
+  const [titleState, setTitleState] = useState(true);
+  console.log(titleState);
   const [searchText, setSearchText] = useState('');
   const [notesArray, setNotesArray] = useState(() => {
 
@@ -31,8 +33,11 @@ const createNote = () => {
 }
 
 const handleTitleChange = (event) => {
+  if(event.target.value.length > 0) {
     setNoteTitle(event.target.value);
-    console.log("Title Function");
+  } else {
+    setTitleState(false);
+  }
 }
 
 // Write a function that sets the value of the textarea as the noteText, 
@@ -43,14 +48,14 @@ const handleTextChange = (event) => {
   }
   }
   
-  
   // Write a function that calls the createNote() function, with noteText passed in as a parameter.
   // Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
 const saveNote = () => {
     if(noteText.trim().length > 0)
-    createNote(noteText, noteTitle);
+    createNote(noteText);
       setNoteText('');
       setNoteTitle('');
+      console.log(titleState);
 }
 
 const deleteNote = (id) => {
@@ -60,16 +65,17 @@ const deleteNote = (id) => {
 
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
+  setTitleState(true);
 }, [notesArray])
 
-console.log(noteText);
-console.log(noteTitle);
   return (
     <div className="App">
         <SideBar 
           handleTextChange={handleTextChange}
           handleTitleChange={handleTitleChange}
           noteTitle={noteTitle}
+          setTitleState={setTitleState}
+          titleState={titleState}
           noteText={noteText}
           saveNote={saveNote}
           notesArray={notesArray}
@@ -79,6 +85,7 @@ console.log(noteTitle);
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
           deleteNote={deleteNote} 
           handleSearchNote={setSearchText}
+          titleState={titleState}
         />  
     </div>
   );

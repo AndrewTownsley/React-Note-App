@@ -6,6 +6,8 @@ const SideBar = ({
     handleTitleChange,
     noteText, 
     noteTitle,
+    setTitleState,
+    titleState,
     saveNote, 
     notesArray,
     deleteNote
@@ -18,6 +20,8 @@ const SideBar = ({
                 handleTitleChange={handleTitleChange}
                 noteText={noteText}
                 noteTitle={noteTitle}
+                titleState={titleState}
+                setTitleState={setTitleState}
                 saveNote={saveNote}
             />
             <NoteHistory

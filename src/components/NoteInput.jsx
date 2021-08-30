@@ -1,12 +1,19 @@
 
-const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote}) => {
+const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setTitleState}) => {
+
 
     return (
         <div className="note-input">
         <div className="note-input-container">
           <h3>Create Note</h3>
+          <form action="submit">
               <label htmlFor="note-title">
-                <input onChange={handleTitleChange} value={noteTitle} type="text" id="note-title" name="note-title" placeholder="Title..." />
+                <input
+                 onChange={handleTitleChange} 
+                 value={noteTitle} 
+                 type="text" id="note-title" name="note-title" placeholder="Title..." 
+                 autoComplete="off" 
+                />
               </label>
               <textarea 
                 onChange={handleTextChange}
@@ -21,6 +28,7 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
                 {/* <small>chars remaining</small> */}
                 <button type="submit" onClick={saveNote} className="save-btn">Save Note</button>
               </div>
+              </form>
         </div>
       </div>
     )

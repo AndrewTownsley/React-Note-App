@@ -1,3 +1,5 @@
+import { FaPlus } from "react-icons/fa"
+
 
 const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setTitleState}) => {
 
@@ -6,8 +8,8 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
         <div className="note-input">
         <div className="note-input-container">
           <h3>Create Note</h3>
-          <form action="submit">
               <label htmlFor="note-title">
+                <button className="note-title-add-btn"><FaPlus/></button>
                 <input
                  onChange={handleTitleChange} 
                  value={noteTitle} 
@@ -25,10 +27,13 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
                 autoFocus={true} >
                 </textarea>
               <div className="note-input-footer">
-                {/* <small>chars remaining</small> */}
+                <div className="category-btn-container">
+                  <button className="category-btn">Home</button>                
+                  <button className="category-btn">Work</button>                
+                  <button className="category-btn">Personal</button>
+                </div>                
                 <button type="submit" onClick={saveNote} className="save-btn">Save Note</button>
               </div>
-              </form>
         </div>
       </div>
     )

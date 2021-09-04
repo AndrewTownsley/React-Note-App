@@ -49,7 +49,16 @@
   padding: 1rem;
 }
 
+.note-title-add-btn {
+  background-color: transparent;
+  color: #888;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
 .note-input-container input {
+  /* position: absolute; */
   padding: 0.5rem;
   background-color: rgb(71, 69, 78);
   outline: 1px solid #999;
@@ -57,6 +66,19 @@
   margin-bottom: 1rem;
   font-size: 1rem;
   color: rgb(204, 204, 204);
+}
+
+.note-title-add-btn {
+  position: relative;
+  top: 42px;
+  left: 225px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.note-title-add-btn:hover {
+  color: rgb(197, 197, 197);
+  transition: ease-in-out 0.2s;
 }
 
 .note-input textarea {
@@ -71,7 +93,7 @@
 }
 
 .note-input textarea:focus {
-  outline: 2px solid #444;
+  outline: 2px solid #999;
 }
 
 .note-input h3 {
@@ -81,6 +103,7 @@
 
 .note-input-footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -152,6 +175,14 @@
 
 .note:hover {
   background-color: rgb(101, 93, 134);
+}
+
+.note-title-true {
+  display: block;
+}
+
+.note-title-false {
+  display: none;
 }
 
 .note-footer {

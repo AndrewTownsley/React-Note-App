@@ -4,7 +4,7 @@ const Note = ({titleState, note, deleteNote}) => {
   if(titleState) {
     return (
           <article className="note" id={note.id}>  
-            <h3>{note.title}</h3>
+            <h3 className={titleState ? ".note-title-true" : ".note-title-false" }>{note.title}</h3>
             <p>{note.text}</p>
             <div className="note-footer">
               <p>{note.date}</p>

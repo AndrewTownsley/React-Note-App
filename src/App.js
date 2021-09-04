@@ -35,8 +35,7 @@ const createNote = () => {
 const handleTitleChange = (event) => {
   if(event.target.value.length > 0) {
     setNoteTitle(event.target.value);
-  } else {
-    setTitleState(false);
+    setTitleState(true);
   }
 }
 
@@ -65,7 +64,7 @@ const deleteNote = (id) => {
 
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
-  setTitleState(true);
+  // setTitleState(false);
 }, [notesArray])
 
   return (

@@ -107,6 +107,10 @@
   justify-content: space-between;
 }
 
+.note-input-select {
+  padding: 10px;
+}
+
 .category-btn-container {
   display: flex;
   flex-wrap: wrap;
@@ -157,6 +161,7 @@
 .note-history-item {
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -167,6 +172,11 @@
 .note-history-item:focus,
 .note-history-item:active {
   border: 1px solid #c6fced;
+}
+
+.note-history-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ----------------------------------- Note Item  */
@@ -211,6 +221,11 @@
   display: none;
 }
 
+.note-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .note-footer {
   display: flex;
   justify-content: space-between;
@@ -219,4 +234,13 @@
 
 .delete-btn {
   cursor: pointer;
+}
+
+.pin-icon {
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.pin-icon:hover {
+  background-color: rgb(132, 122, 175);
 }

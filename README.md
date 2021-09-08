@@ -47,9 +47,11 @@
 
   <!-- ------------------------------------------------------------------------ -->
 
-// Add a Tag/Category to each Note.
+<!-- // Add a Tag/Category to each Note.
 // Maybe need to use the index to identify the specific note being created???
-// Add tag/category to the Note Object
+// Add tag/category to the Note Object -->
+
+// Change the color of the note(?category-text?) based on the selected category //
 
   <!-- ------------------------------------------------------------------------ -->
 

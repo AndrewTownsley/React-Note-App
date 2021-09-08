@@ -2,7 +2,14 @@ import { nanoid } from "nanoid";
 import Note from "./Note";
 
 
-const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchNote, category}) => {
+const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchNote, category, pinNote, handlePinNote}) => {
+
+    // const pinNote = (e) => {
+    // // Change the index of the selected note to be first...
+    // if(pinState(true)) {
+    //     note.index[0]
+    // }
+    // }
 
     return(
         <section className="notes-list-container">
@@ -29,6 +36,8 @@ const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchN
                             category={note.category}
                             text={note.text}
                             deleteNote={deleteNote}
+                            pinNote={pinNote}
+                            handlePinNote={handlePinNote}
                         />
                 })}
             </div>

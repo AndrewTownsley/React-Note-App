@@ -14,7 +14,10 @@ const NoteHistory = ({ notesArray, deleteNote}) => {
                                 id={note.id}
                                 title={note.title}
                                 text={note.text}>
-                                    <h3>{note.title}</h3>
+                                    <div className="note-history-header">
+                                        <h3>{note.title}</h3>
+                                        <h5>{note.category}</h5>
+                                    </div>
                                     <p>{note.text}</p>
                                     <div className="note-footer">
                                         <p>{note.date}</p>

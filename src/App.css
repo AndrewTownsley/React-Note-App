@@ -107,6 +107,32 @@
   justify-content: space-between;
 }
 
+.category-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  border: 2px solid #888;
+  padding: 0.75rem;
+  width: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+}
+
+.category-btn.selected {
+  border: 2px solid #fff;
+  background-color: #444;
+  color: #fff;
+}
+
+.category-btn:hover {
+  border: 2px solid #444;
+}
+
 .save-btn {
   border: none;
   background-color: #fff;

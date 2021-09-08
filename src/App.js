@@ -9,7 +9,7 @@ function App() {
   const [noteText, setNoteText] = useState('');
   const [noteTitle, setNoteTitle] = useState('');
   const [titleState, setTitleState] = useState(true);
-  console.log(titleState);
+  const [category, setCategory] = useState('');
   const [searchText, setSearchText] = useState('');
   const [notesArray, setNotesArray] = useState(() => {
 
@@ -26,10 +26,12 @@ const createNote = () => {
     id: nanoid(),
     title: noteTitle,
     text: noteText,
+    category: category,
     date: date.toLocaleDateString()
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
+  console.log(newNotes);
 }
 
 const handleTitleChange = (event) => {
@@ -54,7 +56,6 @@ const saveNote = () => {
     createNote(noteText);
       setNoteText('');
       setNoteTitle('');
-      console.log(titleState);
 }
 
 const deleteNote = (id) => {
@@ -76,6 +77,7 @@ useEffect(() => {
           setTitleState={setTitleState}
           titleState={titleState}
           noteText={noteText}
+          setCategory={setCategory}
           saveNote={saveNote}
           notesArray={notesArray}
           deleteNote={deleteNote}
@@ -85,6 +87,7 @@ useEffect(() => {
           deleteNote={deleteNote} 
           handleSearchNote={setSearchText}
           titleState={titleState}
+          category={category}
         />  
     </div>
   );

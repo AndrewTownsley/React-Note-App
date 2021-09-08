@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import Note from "./Note";
 
 
-const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchNote}) => {
+const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchNote, category}) => {
 
     return(
         <section className="notes-list-container">
@@ -23,9 +23,10 @@ const NoteList = ({ titleState, noteTitle, notesArray, deleteNote, handleSearchN
                             key={nanoid()}
                             id={note.id}
                             note={note}
-                            noteTitle={noteTitle}
+                            noteTitle={note.noteTitle}
                             titleState={titleState}
                             title={note.title}
+                            category={note.category}
                             text={note.text}
                             deleteNote={deleteNote}
                         />

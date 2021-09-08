@@ -1,7 +1,12 @@
 import { FaPlus } from "react-icons/fa"
 
 
-const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setTitleState}) => {
+const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setTitleState, setCategory}) => {
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    console.log(e.target.value);
+  }
 
 
     return (
@@ -27,12 +32,14 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
                 autoFocus={true} >
                 </textarea>
               <div className="note-input-footer">
-                <div className="category-btn-container">
-                  <button className="category-btn">Home</button>                
-                  <button className="category-btn">Work</button>                
-                  <button className="category-btn">Personal</button>
-                </div>                
-                <button type="submit" onClick={saveNote} className="save-btn">Save Note</button>
+                <select onChange={handleCategoryChange} name="category" id="categorySelect">
+                  <option value="">Category</option>
+                  <option value="Work">Work</option>
+                  <option value="School">School</option>
+                  <option value="Home">Home</option>
+                  <option value="Personal">Personal</option>
+                </select>
+              <button className="save-btn" onClick={saveNote}>Save</button>
               </div>
         </div>
       </div>

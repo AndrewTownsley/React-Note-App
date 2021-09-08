@@ -43,10 +43,13 @@
   <!-- ------------------------------------------------------------------------ -->
 
 **_ // If Title is blank, eliminate the title prop, so that the note begins at the top of the Note article. _**
+// Maybe need to use the index to identify the specific note being created???
 
   <!-- ------------------------------------------------------------------------ -->
 
 // Add a Tag/Category to each Note.
+// Maybe need to use the index to identify the specific note being created???
+// Add tag/category to the Note Object
 
   <!-- ------------------------------------------------------------------------ -->
 

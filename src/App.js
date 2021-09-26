@@ -10,7 +10,6 @@ function App() {
   const [noteTitle, setNoteTitle] = useState('');
   const [titleState, setTitleState] = useState(true);
   const [category, setCategory] = useState('');
-  const [pinNote, setPinNote] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [notesArray, setNotesArray] = useState(() => {
 
@@ -32,7 +31,6 @@ const createNote = () => {
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
-  console.log(newNotes);
 }
 
 const handleTitleChange = (event) => {
@@ -64,11 +62,6 @@ const deleteNote = (id) => {
   setNotesArray(newNotes);
 }
 
-const handlePinNote = (note, index) => {
-  setPinNote(true)
-  const newNotes = [note.index, ...newNotes]
-}
-
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
   // setTitleState(false);
@@ -87,7 +80,6 @@ useEffect(() => {
           saveNote={saveNote}
           notesArray={notesArray}
           deleteNote={deleteNote}
-          handlePinNote={handlePinNote}
           />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
@@ -95,7 +87,6 @@ useEffect(() => {
           handleSearchNote={setSearchText}
           titleState={titleState}
           category={category}
-          handlePinNote={handlePinNote}
         />  
     </div>
   );

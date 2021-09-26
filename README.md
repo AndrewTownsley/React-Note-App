@@ -44,6 +44,7 @@
 
 **_ // If Title is blank, eliminate the title prop, so that the note begins at the top of the Note article. _**
 // Maybe need to use the index to identify the specific note being created???
+// Pass note.ID into function. make that note.ID the first in the array
 
   <!-- ------------------------------------------------------------------------ -->
 
@@ -51,7 +52,13 @@
 // Maybe need to use the index to identify the specific note being created???
 // Add tag/category to the Note Object -->
 
-// Change the color of the note(?category-text?) based on the selected category //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+
+  <!-- ------------------------------------------------------------------------ -->
+
+**_ change the add note button to a round plus button, like on a mobile app _**
+**_ change the add note button to a round plus button, like on a mobile app _**
+**_ change the add note button to a round plus button, like on a mobile app _**
 
   <!-- ------------------------------------------------------------------------ -->
 
@@ -90,5 +97,7 @@
 // Database
 
   <!-- ------------------------------------------------------------------------ -->
+
+// PWA
 
 **_ // ICONS / FOCUS / ACCESSIBILITY _**

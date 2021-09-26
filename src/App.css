@@ -194,13 +194,11 @@
   justify-content: space-between;
   overflow-x: auto;
   overflow-y: auto;
-  /* height: auto; */
   min-width: 200px;
-  max-height: 250px;
-  max-width: 250px;
+  max-height: 175px;
   border-radius: 8px;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   /* background-color: #c8b9f1; */
   background-color: rgb(76, 68, 109);
   /* background-color: #feb459; */

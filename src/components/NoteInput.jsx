@@ -1,11 +1,10 @@
 import { FaPlus } from "react-icons/fa"
 
 
-const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setTitleState, setCategory }) => {
+const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, saveNote, setCategory }) => {
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
-    console.log(e.target.value);
   }
 
 
@@ -34,6 +33,7 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
               <div className="note-input-footer">
                 <select className="note-input-select" onChange={handleCategoryChange} name="category" id="categorySelect">
                   <option value="">Category</option>
+                  <option value="Important">Important !</option>
                   <option value="Work">Work</option>
                   <option value="School">School</option>
                   <option value="Home">Home</option>

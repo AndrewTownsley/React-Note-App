@@ -33,7 +33,7 @@
 .note-search input {
   padding: 0.5rem 1.5rem;
   margin: 1rem;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   border: 3px solid rgb(197, 197, 197);
 }
@@ -45,44 +45,35 @@
 
 .note-input {
   max-width: 100%;
-  margin: 0.5rem 0;
-  padding: 1rem;
+  margin: 0 0 0.5rem 0;
+  padding: 1.1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.note-title-add-btn {
-  background-color: transparent;
-  color: #888;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-}
-
-.note-input-container input {
-  /* position: absolute; */
-  padding: 0.5rem;
+.note-input input {
+  width: 80%;
+  padding: 0.5rem 0;
   background-color: rgb(71, 69, 78);
-  outline: 1px solid #999;
   border: none;
+  border-radius: 5px;
   margin-bottom: 1rem;
   font-size: 1rem;
   color: rgb(204, 204, 204);
 }
 
-.note-title-add-btn {
-  position: relative;
-  top: 42px;
-  left: 225px;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.note-title-add-btn:hover {
-  color: rgb(197, 197, 197);
-  transition: ease-in-out 0.2s;
+.note-input input::placeholder,
+.note-input textarea::placeholder {
+  color: rgb(204, 204, 204);
+  padding-left: 10px;
 }
 
 .note-input textarea {
+  width: 80%;
   font-size: 1rem;
+  border-radius: 5px;
   background-color: rgb(71, 69, 78);
   border: none;
   color: rgb(204, 204, 204);
@@ -96,9 +87,9 @@
   outline: 2px solid #999;
 }
 
-.note-input h3 {
-  border-bottom: 2px solid #444;
-  margin-bottom: 1rem;
+.note-input select {
+  margin-top: 1rem;
+  width: 80%;
 }
 
 .note-input-footer {
@@ -109,32 +100,7 @@
 
 .note-input-select {
   padding: 10px;
-}
-
-.category-btn-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.category-btn {
-  border: 2px solid #888;
-  padding: 0.75rem;
-  width: 50%;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background-color: #fff;
-  color: #444;
-  cursor: pointer;
-}
-
-.category-btn.selected {
-  border: 2px solid #fff;
-  background-color: #444;
-  color: #fff;
-}
-
-.category-btn:hover {
-  border: 2px solid #444;
+  border-radius: 5px;
 }
 
 .save-btn {
@@ -143,8 +109,8 @@
   color: #444;
   padding: 0.5rem;
   margin: 1rem 0 0 0;
-  width: 100%;
-  border-radius: 8px;
+  width: 80%;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
@@ -196,7 +162,7 @@
   overflow-y: auto;
   min-width: 200px;
   max-height: 175px;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 1rem;
   margin: 0.5rem;
   /* background-color: #c8b9f1; */
@@ -228,13 +194,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.note-hide {
-  display: none;
-  background-color: red;
-  color: red;
-  border: 10px solid red;
 }
 
 .delete-btn {

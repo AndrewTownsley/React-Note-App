@@ -10,17 +10,14 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
 
     return (
         <div className="note-input">
-        <div className="note-input-container">
-          <h3>Create Note</h3>
               <label htmlFor="note-title">
-                <button className="note-title-add-btn"><FaPlus/></button>
+                </label>
                 <input
                  onChange={handleTitleChange} 
                  value={noteTitle} 
                  type="text" id="note-title" name="note-title" placeholder="Title..." 
                  autoComplete="off" 
                 />
-              </label>
               <textarea 
                 onChange={handleTextChange}
                 value={noteText} 
@@ -30,7 +27,6 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
                 id="note-input"
                 autoFocus={true} >
                 </textarea>
-              <div className="note-input-footer">
                 <select className="note-input-select" onChange={handleCategoryChange} name="category" id="categorySelect">
                   <option value="">Category</option>
                   <option value="Important">Important !</option>
@@ -39,9 +35,7 @@ const NoteInput = ({ handleTitleChange, handleTextChange, noteTitle, noteText, s
                   <option value="Home">Home</option>
                   <option value="Personal">Personal</option>
                 </select>
-              <button className="save-btn" onClick={saveNote}>Save</button>
-              </div>
-        </div>
+              <button className="save-btn" onClick={saveNote}>Save Note</button>
       </div>
     )
   }

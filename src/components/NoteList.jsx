@@ -5,17 +5,10 @@ import React, { useState, useEffect } from 'react';
 
 
 
-const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote }) => {
-    const [pinNote, setPinNote] = useState([]);
-    const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
+const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePinnedNote, createNote, pinnedNotesArray, setPinnedNotesArray }) => {
+    const [pinNote, setPinNote] = useState(false);
+    // const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
 
-
-
-    const handlePinNote = (note) => {
-        setPinnedNotesArray((pinnedNotesArray) => [...pinnedNotesArray, pinnedNotesArray[pinnedNotesArray.length - 1] + 1])
-        console.log(pinnedNotesArray);
-        console.log('handlePinNote called');
-      }
 
 
     return(
@@ -31,11 +24,8 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote }) => {
                         />
                 </label>
             </div>
+
             <div className="pinned-notes-container">
-                <PinnedNotes
-                    pinnedNotesArray={pinnedNotesArray}
-                    setPinnedNotesArray={setPinnedNotesArray}
-                />
             </div>
             <div className="notes-list">
                 {notesArray.map((note) => {
@@ -49,8 +39,9 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote }) => {
                             category={note.category}
                             text={note.text}
                             deleteNote={deleteNote}
-                            pinNote={pinNote}
-                            handlePinNote={handlePinNote}
+                            savePinnedNote={savePinnedNote}
+                            setPinNote={setPinNote}
+                            // handlePinNote={handlePinNote}
                         />
                 })}
             </div>
@@ -59,3 +50,21 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote }) => {
 }
 
 export default NoteList;
+
+      /* {  pinnedNotesArray.map((note) => {
+                    return <Note 
+                                key={nanoid()}
+                                id={note.id}
+                                note={note}
+                                noteTitle={note.noteTitle}
+                                titleState={titleState}
+                                title={note.title}
+                                category={note.category}
+                                text={note.text}
+                                deleteNote={deleteNote}
+                                savePinnedNote={savePinnedNote}
+                                setPinNote={setPinNote}
+                                // handlePinNote={handlePinNote}
+                            />
+                        })*/
+                    

@@ -11,15 +11,14 @@ function App() {
   const [titleState, setTitleState] = useState(true);
   const [category, setCategory] = useState('');
   const [searchText, setSearchText] = useState('');
+  const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
   const [notesArray, setNotesArray] = useState(() => {
-
     const savedNotes = localStorage.getItem("notes-app-data");
     const initialValue = JSON.parse(savedNotes);
     return initialValue || "";
   });
   const characterLimit = 200;
 
-// Write a function that creates a new Note Object, and adds the new Note Object to the notesArray.  Note should have an ID and text.  Then add the new note to the notesArray.  Then set the notesArray value to the newNotes array.
 const createNote = () => {
   const date = new Date();
   const newNote = {
@@ -51,16 +50,19 @@ const handleTextChange = (event) => {
   // Write a function that calls the createNote() function, with noteText passed in as a parameter.
   // Then set the value of the noteText from the textarea to be BLANK, so that a new note can be created. 
 const saveNote = () => {
-    if(noteText.trim().length > 0)
-    createNote(noteText);
+    if(noteText.trim().length > 0) {
+      createNote(noteText);
       setNoteText('');
       setNoteTitle('');
+    }
 }
 
 const deleteNote = (id) => {
   const newNotes = notesArray.filter((note) => note.id !== id)
   setNotesArray(newNotes);
 }
+
+
 
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
@@ -83,10 +85,15 @@ useEffect(() => {
           />
         <NoteList 
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
+          createNote={createNote}
+          saveNote={saveNote}
+          // savePinnedNote={savePinnedNote}
           deleteNote={deleteNote} 
           handleSearchNote={setSearchText}
           titleState={titleState}
           category={category}
+          pinnedNotesArray={pinnedNotesArray}
+          setPinnedNotesArray={setPinnedNotesArray}
         />  
     </div>
   );

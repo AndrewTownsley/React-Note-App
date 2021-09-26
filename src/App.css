@@ -230,6 +230,13 @@
   align-items: center;
 }
 
+.note-hide {
+  display: none;
+  background-color: red;
+  color: red;
+  border: 10px solid red;
+}
+
 .delete-btn {
   cursor: pointer;
 }

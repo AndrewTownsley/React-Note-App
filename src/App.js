@@ -15,7 +15,7 @@ function App() {
   const [notesArray, setNotesArray] = useState(() => {
     const savedNotes = localStorage.getItem("notes-app-data");
     const initialValue = JSON.parse(savedNotes);
-    return initialValue || "";
+    return initialValue || [];
   });
   const characterLimit = 200;
 

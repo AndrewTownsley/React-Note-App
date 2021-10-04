@@ -9,10 +9,10 @@ const Note = ({titleState, note, savePinnedNote, Note, deleteNote, pinNote, setP
     return (
           <article className="note" id={note.id}>  
             <div className="note-header">
-              <h3>{note.title}</h3>
+              <h3>{note.title.substring(0,30)}</h3>
               <RiPushpin2Line onClick={() => setPinNote(true)} className="pin-icon"/>
             </div>
-            <p>{note.text}</p>
+            <p>{note.text.substring(0, 50)}</p>
             <div className="note-footer">
               <h5>{note.category}</h5>
               <p>{note.date}</p>

@@ -7,9 +7,6 @@ import React, { useState, useEffect } from 'react';
 
 const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePinnedNote, createNote, pinnedNotesArray, setPinnedNotesArray }) => {
     const [pinNote, setPinNote] = useState(false);
-    // const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
-
-
 
     return(
         <section className="notes-list-container">

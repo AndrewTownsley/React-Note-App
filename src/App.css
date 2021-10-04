@@ -149,7 +149,7 @@
 
 .notes-list {
   background-color: rgb(35, 31, 51);
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-wrap: wrap;
 }

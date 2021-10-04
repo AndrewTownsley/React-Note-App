@@ -53,11 +53,16 @@
 // Add tag/category to the Note Object -->
 
 //**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
+//**_ Change the color of the note(?category-text?) based on the selected category _** //
 
   <!-- ------------------------------------------------------------------------ -->
 
-**_ change the add note button to a round plus button, like on a mobile app _**
-**_ change the add note button to a round plus button, like on a mobile app _**
 **_ change the add note button to a round plus button, like on a mobile app _**
 
   <!-- ------------------------------------------------------------------------ -->

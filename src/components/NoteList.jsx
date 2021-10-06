@@ -20,6 +20,16 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePi
                         placeholder="Search Notes..."
                         />
                 </label>
+                <label htmlFor="category-sort">
+                    <select className="note-input-select" name="category-sort" id="category-sort">
+                        <option value="">Category</option>
+                        <option value="Important">Important !</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Home">Home</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </label>
             </div>
 
             <div className="pinned-notes-container">

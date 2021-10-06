@@ -9,22 +9,23 @@
   font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--font-main-clr);
 
-  --bg-primary: #f6f9fd;
-  --bg-second: #f7f7f7;
+  --bg-primary: #f9f9f9;
+  --bg-second: #f8f8f8;
   --font-main-clr: #555;
   --font-second-clr: #777;
-  /* --note-clr: #f6f9fd; */
-  --note-clr: #f7f9fb;
-  --note-hover: #e9eff6;
+  --category-clr: #3cc47c;
+  --note-clr: rgb(252, 252, 252);
+  --note-hover: rgb(249, 249, 249);
 
   --color-btn: #0c73eb;
+  --btn-hover: #0e7dfd;
   --icon-hover: #d9d6e4;
 
   --h3-size: 1rem;
 
-  --border-gray: 1px solid rgb(197, 197, 197);
+  --border-gray: 2px solid rgb(235, 235, 235);
   --border-rad: 3px;
-  --box-shd: 0px 2px 6px 1px rgba(119, 119, 119, 0.3);
+  --box-shd: 0px 1px 6px 0px rgba(119, 119, 119, 0.2);
 }
 
 .App {
@@ -46,11 +47,11 @@ h3 {
 }
 
 .note-search {
-  background-color: var(--color-bg);
+  background-color: var(--bg-primary);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
 }
 .note-search input {
   padding: 0.5rem 1.5rem;
@@ -146,8 +147,7 @@ h3 {
 }
 
 .save-btn:hover {
-  color: #222;
-  background-color: rgb(246, 239, 255);
+  background-color: var(--btn-hover);
 }
 
 .note-history {
@@ -170,7 +170,7 @@ h3 {
 }
 
 .note-history-item:hover {
-  background-color: var(--note-hover);
+  outline: 2px solid var(--color-btn);
 }
 
 .note-history-item:focus,
@@ -186,12 +186,11 @@ h3 {
 /* ----------------------------------- Note Item  */
 
 .notes-list {
-  background-color: var(--color-bg);
+  background-color: var(--bg-primary);
   display: grid;
   grid-template-rows: 175px;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
 }
 
 .note {
@@ -204,7 +203,7 @@ h3 {
   max-height: 175px;
   border-radius: var(--border-rad);
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
   /* background-color: #c8b9f1; */
   /* background-color: #feb459; */
   background-color: var(--note-clr);
@@ -215,9 +214,15 @@ h3 {
 
 .note:hover {
   background-color: var(--note-hover);
-  box-shadow: 0px 3px 6px 2px rgba(119, 119, 119, 0.3);
-  -moz-box-shadow: 0px 3px 6px 2px rgba(119, 119, 119, 0.3);
-  -webkit-box-shadow: 0px 3px 6px 2px rgba(119, 119, 119, 0.3);
+  box-shadow: 0px 1px 6px 1px rgba(119, 119, 119, 0.25);
+}
+
+.note h5 {
+  color: var(--category-clr);
+}
+
+.note p {
+  color: var(--font-second-clr);
 }
 
 .note-title-true {

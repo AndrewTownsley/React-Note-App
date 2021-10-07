@@ -2,7 +2,7 @@ import { MdDeleteForever } from 'react-icons/md'
 import { RiPushpin2Line } from 'react-icons/ri';
 
 
-const Note = ({titleState, note, savePinnedNote, Note, deleteNote, pinNote, setPinNote, pinnedNotesArray, setPinnedNotesArray, handlePinNote}) => {
+const Note = ({titleState, note, Note, deleteNote, pinNote, setPinNote, pinnedNotesArray, handlePinNote}) => {
 
 
 
@@ -14,7 +14,7 @@ const Note = ({titleState, note, savePinnedNote, Note, deleteNote, pinNote, setP
             </div>
             <p>{note.text.substring(0, 50)}</p>
             <div className="note-footer">
-              <h5>{note.category}</h5>
+              <h5 className={note.category}>{note.category}</h5>
               <p>{note.date}</p>
               <MdDeleteForever className="delete-btn" onClick={() => deleteNote(note.id)}/>
             </div>

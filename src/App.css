@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 #root {
-  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--font-main-clr);
 
   --bg-primary: #f9f9f9;
@@ -268,17 +268,21 @@ input:focus {
 }
 
 .Important {
-  color: red;
+  color: #fc4a1a;
 }
 
 .Work {
-  color: yellow;
+  color: #f6c054;
 }
 
 .Personal {
-  color: blue;
+  color: #5bca8f;
 }
 
 .School {
-  color: purple;
+  color: #aa5aca;
+}
+
+.Home {
+  color: #4999c7;
 }

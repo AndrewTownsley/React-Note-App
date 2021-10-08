@@ -71,11 +71,26 @@
 
   <!-- ------------------------------------------------------------------------ -->
 
+// Add little dropdown menu on note that holds the pin and delete button.
+
+  <!-- ------------------------------------------------------------------------ -->
+
 // Pin Note to top of List.
 
   <!-- ------------------------------------------------------------------------ -->
 
 // Filter Notes by tag/category.
+
+  <!-- ------------------------------------------------------------------------ -->
+
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
+// Random User API for login, Create Public NOte Board for a team/family
 
   <!-- ------------------------------------------------------------------------ -->
 

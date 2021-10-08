@@ -33,7 +33,7 @@ const createNote = () => {
 }
 
 const handleTitleChange = (event) => {
-  if(event.target.value.length > 0) {
+  if(event.target.value.length >= 0) {
     setNoteTitle(event.target.value);
     setTitleState(true);
   }

@@ -9,12 +9,14 @@ const Note = ({titleState, note, Note, deleteNote, pinNote, setPinNote, pinnedNo
     return (
           <article className="note" id={note.id}>  
             <div className="note-header">
-              <h3>{note.title.substring(0,30)}</h3>
+              <div className="note-header-title">
+                <h5 className={note.category}>{note.category}</h5>
+                <h3>{note.title.substring(0,30)}</h3>
+              </div>
               <RiPushpin2Line onClick={() => setPinNote(true)} className="pin-icon"/>
             </div>
             <p>{note.text.substring(0, 50)}</p>
             <div className="note-footer">
-              <h5 className={note.category}>{note.category}</h5>
               <p>{note.date}</p>
               <MdDeleteForever className="delete-btn" onClick={() => deleteNote(note.id)}/>
             </div>

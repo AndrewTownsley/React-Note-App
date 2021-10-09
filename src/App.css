@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 * {
   margin: 0;
@@ -13,6 +14,7 @@
   --bg-second: #f8f8f8;
   --font-main-clr: #555;
   --font-second-clr: #777;
+  --font-light-clr: #999;
   --category-clr: #3cc47c;
   --note-clr: rgb(252, 252, 252);
   --note-hover: rgb(249, 249, 249);
@@ -21,11 +23,14 @@
   --btn-hover: #0e7dfd;
   --icon-hover: #d9d6e4;
 
-  --h3-size: 1rem;
+  --font-lrg: 1.2rem;
+  --font-med: 1rem;
+  --font-sml: 0.85rem;
 
   --border-gray: 2px solid rgb(235, 235, 235);
   --border-rad: 3px;
   --box-shd: 0px 1px 6px 0px rgba(119, 119, 119, 0.2);
+  --box-hover: 0px 1px 6px 1px rgba(119, 119, 119, 0.25);
   --input-outline: 2px solid #0e7dfd;
 }
 
@@ -34,8 +39,17 @@
   grid-template-columns: 300px 1fr;
 }
 
+h5 {
+  margin-bottom: 5px;
+}
+
 h3 {
-  font-size: 1rem;
+  margin-bottom: 5px;
+  font-size: var(--font-med);
+}
+
+p {
+  font-size: var(--font-sml);
 }
 
 select:focus,
@@ -69,7 +83,7 @@ input:focus {
   border: var(--border-gray);
   border-radius: var(--border-rad);
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: var(--font-med);
   color: var(--font-main-clr);
 }
 
@@ -79,22 +93,18 @@ input:focus {
 
 .note-input input::placeholder,
 .note-input textarea::placeholder {
-  color: rgb(204, 204, 204);
+  color: var(--font-second-clr);
   padding-left: 10px;
 }
 
 .note-input textarea {
   width: 80%;
-  font-size: 1rem;
+  font-size: var(--font-med);
   border-radius: var(--border-rad);
   background-color: #fff;
   border: var(--border-gray);
   outline: none;
   color: var(--font-main-clr);
-}
-
-.note-input textarea::placeholder {
-  color: rgb(204, 204, 204);
 }
 
 .note-input textarea:focus {
@@ -121,6 +131,11 @@ input:focus {
 }
 
 .save-btn {
+  font-family: "Rubik", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
   border: none;
   background-color: var(--color-btn);
   color: #fff;
@@ -129,8 +144,13 @@ input:focus {
   width: 80%;
   border-radius: var(--border-rad);
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: var(--font-med);
   font-weight: 700;
+  box-shadow: var(--box-shd);
+}
+
+.save-btn .plus {
+  padding-right: 10px;
 }
 
 .save-btn:hover {
@@ -149,11 +169,7 @@ input:focus {
 }
 
 .note-history-item h3 {
-  font-size: 0.8rem;
-}
-
-.note-history-item p {
-  font-size: 16px;
+  font-size: var(--font-sml);
 }
 
 .note-history-item:hover {
@@ -175,7 +191,6 @@ input:focus {
 .notes-list {
   background-color: var(--bg-primary);
   display: grid;
-  /* grid-template-rows: 175px; */
   grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
   gap: 0.5rem;
 }
@@ -186,11 +201,10 @@ input:focus {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  /* margin: 2rem; */
 }
+
 .note-search input {
   padding: 0.5rem 1.5rem;
-  /* margin: 1rem; */
   border-radius: var(--border-rad);
   border: none;
   border: var(--border-gray);
@@ -215,8 +229,6 @@ input:focus {
   border-radius: var(--border-rad);
   padding: 1rem;
   margin: 1rem;
-  /* background-color: #c8b9f1; */
-  /* background-color: #feb459; */
   background-color: var(--note-clr);
   color: var(--font-main-clr);
   cursor: pointer;
@@ -225,15 +237,12 @@ input:focus {
 
 .note:hover {
   background-color: var(--note-hover);
-  box-shadow: 0px 1px 6px 1px rgba(119, 119, 119, 0.25);
+  box-shadow: var(--box-hover);
 }
-/* 
-.note h5 {
-  color: var(--category-clr);
-} */
 
 .note p {
   color: var(--font-second-clr);
+  font-size: var(--font-med);
 }
 
 .note-title-true {
@@ -253,6 +262,11 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.note-footer p {
+  font-size: var(--font-sml);
+  color: var(--font-light-clr);
 }
 
 .delete-btn,

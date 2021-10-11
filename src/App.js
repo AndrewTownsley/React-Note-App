@@ -69,7 +69,6 @@ useEffect(() => {
   // setTitleState(false);
 }, [notesArray])
 
-
   return (
     <div className="App">
         <SideBar 

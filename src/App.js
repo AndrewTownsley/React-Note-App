@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { nanoid } from "nanoid";
 import "./App.css";
+import { db } from './firebase-config';
+import { collection, getDocs, addDoc, setDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import NoteList from './components/NoteList';
 import SideBar from './components/SideBar';
 
@@ -12,12 +14,9 @@ function App() {
   const [category, setCategory] = useState('');
   const [searchText, setSearchText] = useState('');
   const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
-  const [notesArray, setNotesArray] = useState(() => {
-    const savedNotes = localStorage.getItem("notes-app-data");
-    const initialValue = JSON.parse(savedNotes);
-    return initialValue || [];
-  });
+  const [notesArray, setNotesArray] = useState([]);
   const characterLimit = 200;
+  const notesCollectionRef = collection(db, 'notes');
 
 const createNote = () => {
   const date = new Date();
@@ -30,7 +29,16 @@ const createNote = () => {
   }
   const newNotes = [...notesArray, newNote]
   setNotesArray(newNotes);
+  db.collection('notes')
+    .add({
+      id: nanoid(),
+      title: noteTitle,
+      text: noteText,
+      category: category,
+      date: date.toLocaleDateString()
+    })
 }
+console.log(notesArray);
 
 const handleTitleChange = (event) => {
   if(event.target.value.length >= 0) {
@@ -69,6 +77,15 @@ useEffect(() => {
   // setTitleState(false);
 }, [notesArray])
 
+useEffect(() => {
+  const fetchNotes = async () => {
+    const data = await getDocs(notesCollectionRef)
+    console.log(data.docs);
+    // setNotesArray(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+  }
+  fetchNotes()
+}, [])
+
   return (
     <div className="App">
         <SideBar 
@@ -87,7 +104,6 @@ useEffect(() => {
           notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
           createNote={createNote}
           saveNote={saveNote}
-          // savePinnedNote={savePinnedNote}
           deleteNote={deleteNote} 
           handleSearchNote={setSearchText}
           titleState={titleState}

@@ -10,6 +10,7 @@ function App() {
   const [noteTitle, setNoteTitle] = useState('');
   const [titleState, setTitleState] = useState(true);
   const [category, setCategory] = useState('');
+  const [filterCategory, setFilterCategory] = useState('');
   const [searchText, setSearchText] = useState('');
   const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
   const [notesArray, setNotesArray] = useState(() => {
@@ -62,11 +63,15 @@ const deleteNote = (id) => {
   setNotesArray(newNotes);
 }
 
+const handleCategorySort = (e) => {
+  console.log(e.target.value);
+  setFilterCategory(e.target.value);
+}
+
 
 
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
-  // setTitleState(false);
 }, [notesArray])
 
   return (
@@ -84,12 +89,18 @@ useEffect(() => {
           deleteNote={deleteNote}
           />
         <NoteList 
-          notesArray={notesArray.filter(note => note.text.toLowerCase().includes(searchText))}
+          notesArray={
+            filterCategory === "" ? notesArray.filter(note => note.text.toLowerCase().includes(searchText)) 
+            :
+            notesArray.filter(note => note.text.toLowerCase().includes(searchText)) &&
+            notesArray.filter(note => note.category === filterCategory)
+          }
           createNote={createNote}
           saveNote={saveNote}
           // savePinnedNote={savePinnedNote}
           deleteNote={deleteNote} 
           handleSearchNote={setSearchText}
+          handleCategorySort={handleCategorySort}
           titleState={titleState}
           category={category}
           pinnedNotesArray={pinnedNotesArray}

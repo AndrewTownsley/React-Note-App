@@ -55,11 +55,8 @@
 //**_ Change the color of the note(?category-text?) based on the selected category _** //
 //**_ Change the color of the note(?category-text?) based on the selected category _** //
 //**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
+
+<!-- //**_ Change the color of the note(?category-text?) based on the selected category _** // -->
 
   <!-- ------------------------------------------------------------------------ -->
 

@@ -1,12 +1,12 @@
 import { nanoid } from "nanoid";
 import Note from "./Note";
-import PinnedNotes from "./PinnedNotes";
-import React, { useState, useEffect } from 'react';
+// import PinnedNotes from "./PinnedNotes";
+import React, { useState } from 'react';
 
 
 
-const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePinnedNote, createNote, pinnedNotesArray, setPinnedNotesArray }) => {
-    const [pinNote, setPinNote] = useState(false);
+const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, handleCategorySort, savePinnedNote, createNote, pinnedNotesArray, setPinnedNotesArray }) => {
+    // const [pinNote, setPinNote] = useState(false);
 
     return(
         <section className="notes-list-container">
@@ -21,7 +21,7 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePi
                         />
                 </label>
                 <label htmlFor="category-sort">
-                    <select className="note-input-select" name="category-sort" id="category-sort">
+                    <select onChange={handleCategorySort} className="note-input-select" name="category-sort" id="category-sort">
                         <option value="">Category</option>
                         <option value="Important">Important !</option>
                         <option value="Work">Work</option>
@@ -47,7 +47,7 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, savePi
                             text={note.text}
                             deleteNote={deleteNote}
                             savePinnedNote={savePinnedNote}
-                            setPinNote={setPinNote}
+                            // setPinNote={setPinNote}
                             // handlePinNote={handlePinNote}
                         />
                 })}

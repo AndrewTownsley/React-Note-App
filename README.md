@@ -53,8 +53,6 @@
 // Add tag/category to the Note Object -->
 
 //**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
-//**_ Change the color of the note(?category-text?) based on the selected category _** //
 
 <!-- //**_ Change the color of the note(?category-text?) based on the selected category _** // -->
 
@@ -80,13 +78,6 @@
 
   <!-- ------------------------------------------------------------------------ -->
 
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
-// Random User API for login, Create Public NOte Board for a team/family
 // Random User API for login, Create Public NOte Board for a team/family
 
   <!-- ------------------------------------------------------------------------ -->
@@ -122,3 +113,11 @@
 // PWA
 
 **_ // ICONS / FOCUS / ACCESSIBILITY _**
+
+Tuesday Meetup Tasks!!
+
+// 1. Mobile Layout.
+// 2. slide sidebar/note-input in from left.
+// 3. Burger-menu.
+// 4. Material-Design layout guidelines.
+// 5.

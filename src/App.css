@@ -357,18 +357,6 @@ input:focus {
     display: block;
   }
 
-  .sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-  }
-
-  .openSidebar {
-    transform: translateX(0);
-  }
-
   .notes-list {
     padding: 0 0.5rem;
   }
@@ -398,5 +386,19 @@ input:focus {
   .note-search-input {
     width: 75%;
     margin-bottom: 1rem;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .openSidebar {
+    transform: translateX(0);
   }
 }

@@ -12,11 +12,11 @@ const SideBar = ({
     saveNote, 
     notesArray,
     deleteNote,
-    pinNote
+    open
     }) => {
 
     return (
-        <div className="sidebar">
+        <div className={open ? "sidebar openSidebar" : "sidebar"}>
             <NoteInput 
                 handleTextChange={handleTextChange}
                 handleTitleChange={handleTitleChange}
@@ -30,7 +30,6 @@ const SideBar = ({
             <NoteHistory
                 notesArray={notesArray}
                 deleteNote={deleteNote}
-                pinNote={pinNote}
             />
         </div>
     )

@@ -12,7 +12,7 @@ function App() {
   const [category, setCategory] = useState('');
   const [filterCategory, setFilterCategory] = useState('');
   const [searchText, setSearchText] = useState('');
-  const [pinnedNotesArray, setPinnedNotesArray] = useState([0])
+  const [open, setOpen] = useState(false);
   const [notesArray, setNotesArray] = useState(() => {
     const savedNotes = localStorage.getItem("notes-app-data");
     const initialValue = JSON.parse(savedNotes);
@@ -69,7 +69,6 @@ const handleCategorySort = (e) => {
 }
 
 
-
 useEffect(() => {
   localStorage.setItem("notes-app-data", JSON.stringify(notesArray))
 }, [notesArray])
@@ -87,7 +86,8 @@ useEffect(() => {
           saveNote={saveNote}
           notesArray={notesArray}
           deleteNote={deleteNote}
-          />
+          open={open}
+        />
         <NoteList 
           notesArray={
             filterCategory === "" ? notesArray.filter(note => note.text.toLowerCase().includes(searchText)) 
@@ -103,8 +103,8 @@ useEffect(() => {
           handleCategorySort={handleCategorySort}
           titleState={titleState}
           category={category}
-          pinnedNotesArray={pinnedNotesArray}
-          setPinnedNotesArray={setPinnedNotesArray}
+          open={open}
+          setOpen={setOpen}
         />  
     </div>
   );

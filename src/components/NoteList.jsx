@@ -4,14 +4,17 @@ import Note from "./Note";
 
 
 
-const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, handleCategorySort, savePinnedNote, createNote, pinnedNotesArray, setPinnedNotesArray }) => {
-    // const [pinNote, setPinNote] = useState(false);
+const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, handleCategorySort, savePinnedNote, openMenu, open, setOpen }) => {
 
     return(
         <section className="notes-list-container">
             <div className="note-search">
                 <div className="note-search-container">
-                    <GiHamburgerMenu className="burger-icon"/>
+                    <GiHamburgerMenu 
+                        onClick={ !open ? () => setOpen(true) : () => setOpen(false)}
+                        open={open}
+                        className="burger-icon"
+                    />
                     <input 
                         className="note-search-input"
                         onChange={(event) => handleSearchNote(event.target.value)} 
@@ -47,8 +50,6 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, handle
                             text={note.text}
                             deleteNote={deleteNote}
                             savePinnedNote={savePinnedNote}
-                            // setPinNote={setPinNote}
-                            // handlePinNote={handlePinNote}
                         />
                 })}
             </div>
@@ -58,20 +59,4 @@ const NoteList = ({ titleState, notesArray, deleteNote, handleSearchNote, handle
 
 export default NoteList;
 
-      /* {  pinnedNotesArray.map((note) => {
-                    return <Note 
-                                key={nanoid()}
-                                id={note.id}
-                                note={note}
-                                noteTitle={note.noteTitle}
-                                titleState={titleState}
-                                title={note.title}
-                                category={note.category}
-                                text={note.text}
-                                deleteNote={deleteNote}
-                                savePinnedNote={savePinnedNote}
-                                setPinNote={setPinNote}
-                                // handlePinNote={handlePinNote}
-                            />
-                        })*/
                     
